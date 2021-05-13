@@ -10,7 +10,7 @@ namespace Pedido.Interface.Repositories
 
         Produto GetId(long id);
         Produto GetDescricao(string descricao);
-        List<Produto> GetCategoria(int categoria);
+        List<Produto> GetCategoria(string categoria);
 
         long Criar(ProdutoDTO produto);
 

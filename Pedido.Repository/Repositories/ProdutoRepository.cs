@@ -34,12 +34,18 @@ namespace Pedido.Repository
             return query;
         }
 
-        public List<Produto> GetCategoria(int categoria)
+        public List<Produto> GetCategoria(string categoria)
         {
-            if (categoria <= 0) return null;
+            if (categoria == null) return null;
 
-            var query = _context.Produtos.Where(x => x.Ativo == true && x.Categoria.Equals(categoria));
-            return query.ToList();
+            var query = _context.Produtos.Where(x => x.Categoria.ToUpper() == categoria.ToUpper()).ToList();
+            List<Produto> produtos = new List<Produto>();
+
+            foreach (var item in query)
+            {
+                produtos.Add(item);
+            }
+            return produtos.ToList();
         }
 
         public long Alterar(ProdutoDTO produto)
@@ -76,8 +82,8 @@ namespace Pedido.Repository
         {
             var entity = new Produto()
             {
-                Descricao = produto.Descricao,
-                Categoria = produto.Categoria,
+                Descricao = produto.Descricao.ToUpper(),
+                Categoria = produto.Categoria.ToUpper(),
                 QtdeProduto = produto.QtdeProduto,
                 Preco = produto.Preco,
                 DataCadastro = DateTime.Now,

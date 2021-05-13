@@ -1,4 +1,4 @@
-﻿using Pedido.Domain.Enums;
+﻿using Pedido.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +7,11 @@ using System.Threading.Tasks;
 
 namespace Pedido.Domain.Dtos
 {
-    public class ProdutoDTO
+    public class FornecedorDTO
     {
         public long Id { get; set; }
-        public string Descricao { get; set; }
-        public string Categoria { get; set; }
-        public int QtdeProduto { get; set; }
-        public double Preco { get; set; }
+        public string Nome { get; set; }
+        public string NomeFantasia { get; set; }
         public bool Ativo { get; set; }
     }
 }

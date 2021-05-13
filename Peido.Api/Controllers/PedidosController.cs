@@ -8,10 +8,10 @@ namespace Pedido.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PedidoController : Controller
+    public class PedidosController : Controller
     {
         private IProdutoRepository _produto;
-        public PedidoController(IProdutoRepository produto)
+        public PedidosController(IProdutoRepository produto)
         {
             _produto = produto;
         }
@@ -36,9 +36,10 @@ namespace Pedido.Api.Controllers
         }
 
         [HttpGet("categoria")]
-        public List<Produto> GetCategoria(int categoria)
+        public List<Produto> GetCategoria(string categoria)
         {
             return _produto.GetCategoria(categoria);
+            
         }
 
         [HttpPost]

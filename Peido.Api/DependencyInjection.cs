@@ -18,6 +18,7 @@ namespace Pedido.Api
         private static void RepositoryDependence(IServiceCollection serviceProvider)
         {
             serviceProvider.AddScoped<IProdutoRepository, ProdutoRepository>();
+            serviceProvider.AddScoped<IFornecedorRepository, FornecedorRepository>();
         }
     }
 }
