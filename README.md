@@ -1,4 +1,4 @@
-﻿# API para cadastro de desenvolvedores
+﻿# API para cadastro de produtos
 
 
-# Destinada ao cadastro desenvolvedores, níveis e apresenta relatório.
+# Destinada ao cadastro de produtos.
