@@ -19,11 +19,11 @@ namespace Stock.Infra.Data.Mappings
                 .IsRequired();
 
             builder.Property(x => x.CreatedAt)
-                .HasColumnType("datetime")
+                .HasColumnType("timestamp ")
                 .IsRequired();
 
             builder.Property(x => x.UpdatedAt)
-                .HasColumnType("datetime");
+                .HasColumnType("timestamp");
 
             builder.ToTable(_tableName);
         }
